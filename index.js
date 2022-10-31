@@ -3,6 +3,7 @@ const app = express();
 const env = require('./config/environment');
 const path = require('path');
 const port = env.port;
+const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleWare = require('node-sass-middleware');
 const flash = require('connect-flash');
@@ -40,8 +41,8 @@ app.use(cookieParser());
 
 app.listen(port, (err) => {
   if (err) {
-    console.log(`error in running the server: ${err}`);
+    console.log(`Error in running the server: ${err}`);
   } else {
-    console.log(`server is up and running on port: ${port}`);
+    console.log(`Server is up and running on port: ${port}`);
   }
 });
