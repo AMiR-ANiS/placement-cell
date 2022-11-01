@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const viewHelpers = require('./config/view-helpers');
 const env = require('./config/environment');
 const path = require('path');
 const port = env.port;
@@ -10,6 +11,8 @@ const flash = require('connect-flash');
 const customMiddleWare = require('./config/middleware');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+
+viewHelpers(app);
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -38,6 +41,7 @@ app.use(cookieParser());
 // app.use(flash());
 // app.use(customMiddleWare.setFlash);
 // flash requires session
+app.use('/', require('./routes'));
 
 app.listen(port, (err) => {
   if (err) {
