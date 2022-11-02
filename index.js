@@ -11,6 +11,8 @@ const flash = require('connect-flash');
 const customMiddleWare = require('./config/middleware');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 viewHelpers(app);
 
@@ -38,9 +40,23 @@ app.use(
   })
 );
 app.use(cookieParser());
-// app.use(flash());
-// app.use(customMiddleWare.setFlash);
-// flash requires session
+app.use(
+  session({
+    name: env.session_cookie_name,
+    secret: env.session_cookie_key,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      maxAge: 1000 * 60 * 60
+    },
+    store: MongoStore.create({
+      mongoUrl: `mongodb://localhost/${env.db_name}`,
+      autoRemove: 'disabled'
+    })
+  })
+);
+app.use(flash());
+app.use(customMiddleWare.setFlash);
 app.use('/', require('./routes'));
 
 app.listen(port, (err) => {
