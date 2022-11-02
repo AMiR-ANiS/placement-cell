@@ -17,29 +17,29 @@ const MongoStore = require('connect-mongo');
 viewHelpers(app);
 
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-app.use(expressLayouts);
-app.use(express.static(path.join(__dirname, env.asset_path)));
-if (env.name === 'development') {
-  app.use(
-    sassMiddleWare({
-      src: path.join(__dirname, env.asset_path, 'scss'),
-      dest: path.join(__dirname, env.asset_path, 'css'),
-      debug: false,
-      outputStyle: 'expanded',
-      prefix: '/css'
-    })
-  );
-}
 app.use(
   bodyParser.urlencoded({
     extended: false
   })
 );
 app.use(cookieParser());
+if (env.name === 'development') {
+  app.use(
+    sassMiddleWare({
+      src: path.join(__dirname, env.asset_path, 'scss'),
+      dest: path.join(__dirname, env.asset_path, 'css'),
+      debug: true,
+      outputStyle: 'expanded',
+      prefix: '/css'
+    })
+  );
+}
+app.use(express.static(path.join(__dirname, env.asset_path)));
+app.use(expressLayouts);
 app.use(
   session({
     name: env.session_cookie_name,
