@@ -9,3 +9,5 @@ module.exports.signIn = (req, res) => {
     title: 'Sign In'
   });
 };
+
+module.exports.newEmployee = (req, res) => {};

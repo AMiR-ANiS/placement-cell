@@ -24,8 +24,9 @@
     ></script>
   </head>
   <body>
-    <%- include('_header'); -%>
-    <main id="layout-container"><%- body -%></main>
-    <%- include('_footer'); -%> <%- script -%>
+    <div id="layout-container">
+      <%- include('_header'); -%> <%- body -%> <%- include('_footer'); -%>
+    </div>
+    <%- script -%>
   </body>
 </html>

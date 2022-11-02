@@ -5,5 +5,28 @@
 />
 
 <div id="sign-up-container">
-  <h1>Sign Up</h1>
+  <h1>Employee Sign Up</h1>
+  <form action="/employees/new" method="POST">
+    Name: <br />
+    <input type="text" name="name" placeholder="type name..." />
+    <br />
+    <br />
+    Email: <br />
+    <input type="text" name="email" placeholder="type email..." />
+    <br />
+    <br />
+    Password: <br />
+    <input type="password" name="password" placeholder="type password..." />
+    <br />
+    <br />
+    Confirm Password: <br />
+    <input
+      type="password"
+      name="confirm_password"
+      placeholder="retype password..."
+    />
+    <br />
+    <br />
+    <input type="submit" value="Sign Up" />
+  </form>
 </div>
