@@ -14,11 +14,39 @@ module.exports.signIn = (req, res) => {
 
 module.exports.newEmployee = async (req, res) => {
   try {
-    if (req.body.password !== req.body.confirm_password) {
-      req.flash('error', 'password and confirm password mismatch!');
+    if (req.body.name.length === 0) {
+      req.flash('error', 'Name cannot be empty!');
+      return res.redirect('back');
     }
 
-    return res.redirect('back');
+    if (req.body.email.length === 0) {
+      req.flash('error', 'Email cannot be empty!');
+      return res.redirect('back');
+    }
+
+    if (req.body.password !== req.body.confirm_password) {
+      req.flash('error', 'Password and confirm password should match!');
+      return res.redirect('back');
+    }
+
+    let employee = await Employee.findOne({
+      email: req.body.email
+    });
+
+    if (employee) {
+      req.flash(
+        'error',
+        'Employee with that email has already been registered!'
+      );
+      return res.redirect('back');
+    } else {
+      await Employee.create(req.body);
+      req.flash(
+        'success',
+        'Employee registered successfully!, Please log in to continue!'
+      );
+      return res.redirect('/employees/sign-in');
+    }
   } catch (err) {
     req.flash('error', 'Sign up failed!');
     return res.redirect('back');
