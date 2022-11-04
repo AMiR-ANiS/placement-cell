@@ -32,7 +32,7 @@ if (env.name === 'development') {
     sassMiddleWare({
       src: path.join(__dirname, env.asset_path, 'scss'),
       dest: path.join(__dirname, env.asset_path, 'css'),
-      debug: true,
+      debug: false,
       outputStyle: 'expanded',
       prefix: '/css'
     })

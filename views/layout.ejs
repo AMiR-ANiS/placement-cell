@@ -27,6 +27,26 @@
     <div id="layout-container">
       <%- include('_header'); -%> <%- body -%> <%- include('_footer'); -%>
     </div>
-    <%- script -%>
+    <%- script -%> <% if(flash.success){ %>
+    <script>
+      new Noty({
+        text: '<%= flash.success %>',
+        layout: 'topCenter',
+        theme: 'metroui',
+        type: 'success',
+        timeout: 3000
+      }).show();
+    </script>
+    <% } else if(flash.error){ %>
+    <script>
+      new Noty({
+        text: '<%= flash.error %>',
+        type: 'error',
+        layout: 'topCenter',
+        timeout: 3000,
+        theme: 'metroui'
+      }).show();
+    </script>
+    <% } %>
   </body>
 </html>
