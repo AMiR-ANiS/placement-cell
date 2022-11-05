@@ -13,6 +13,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local');
 
 viewHelpers(app);
 
@@ -55,6 +57,9 @@ app.use(
     })
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthentication);
 app.use(flash());
 app.use(customMiddleWare.setFlash);
 app.use('/', require('./routes'));

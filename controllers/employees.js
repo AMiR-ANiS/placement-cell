@@ -52,3 +52,14 @@ module.exports.newEmployee = async (req, res) => {
     return res.redirect('back');
   }
 };
+
+module.exports.destroySession = (req, res) => {
+  req.logout();
+  req.flash('success', 'Log out successful!');
+  return res.redirect('/employees/sign-in');
+};
+
+module.exports.generateSession = (req, res) => {
+  req.flash('success', 'Log in successful!');
+  return res.redirect('/');
+};
