@@ -1,4 +1,5 @@
-#sign-up-container {
+#sign-up-container,
+#sign-in-container {
   height: 100%;
   overflow: auto;
   display: flex;
@@ -9,11 +10,13 @@
   box-sizing: border-box;
 }
 
-#sign-up-container h1 {
+#sign-up-container h1,
+#sign-in-container h1 {
   margin: 0;
 }
 
-#sign-up-container form input {
+#sign-up-container form input,
+#sign-in-container form input {
   width: 300px;
   border-radius: 50px;
   padding: 5px;
@@ -21,12 +24,14 @@
   box-sizing: border-box;
 }
 
-#sign-up-container form input[type='submit'] {
+#sign-up-container form input[type='submit'],
+#sign-in-container form input[type='submit'] {
   background-color: #17c700;
   cursor: pointer;
   box-shadow: 2px 2px 2px black;
 }
 
-#sign-up-container form input[type='submit']:hover {
+#sign-up-container form input[type='submit']:hover,
+#sign-in-container form input[type='submit']:hover {
   background-color: #1cee00;
 }

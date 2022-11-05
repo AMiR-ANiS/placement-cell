@@ -4,4 +4,17 @@
   href="<%= assetPath('/css/sign_up_and_sign_in.css') %>"
 />
 
-<div id="sign-in-container">Sign In</div>
+<div id="sign-in-container">
+  <h1>Employee Sign In</h1>
+  <form action="/employees/generate-session" method="POST">
+    Email: <br />
+    <input type="email" name="email" placeholder="Enter email..." />
+    <br />
+    <br />
+    Password: <br />
+    <input type="password" name="password" placeholder="Type password..." />
+    <br />
+    <br />
+    <input type="submit" value="Sign In" />
+  </form>
+</div>
