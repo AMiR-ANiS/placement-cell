@@ -1,12 +1,18 @@
 const Employee = require('../models/employee');
 
 module.exports.signUp = (req, res) => {
+  if (req.isAuthenticated()) {
+    return res.redirect('/');
+  }
   return res.render('employee_sign_up', {
     title: 'Sign Up'
   });
 };
 
 module.exports.signIn = (req, res) => {
+  if (req.isAuthenticated()) {
+    return res.redirect('/');
+  }
   return res.render('employee_sign_in', {
     title: 'Sign In'
   });
@@ -14,6 +20,9 @@ module.exports.signIn = (req, res) => {
 
 module.exports.newEmployee = async (req, res) => {
   try {
+    if (req.isAuthenticated()) {
+      return res.redirect('/');
+    }
     if (req.body.name.length === 0) {
       req.flash('error', 'Name cannot be empty!');
       return res.redirect('back');
@@ -53,10 +62,18 @@ module.exports.newEmployee = async (req, res) => {
   }
 };
 
-module.exports.destroySession = (req, res) => {
-  req.logout();
-  req.flash('success', 'Log out successful!');
-  return res.redirect('/employees/sign-in');
+module.exports.destroySession = (req, res, next) => {
+  if (!req.isAuthenticated()) {
+    req.flash('error', 'no user log on detected!');
+    return res.redirect('/');
+  }
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    req.flash('success', 'Log out successful!');
+    return res.redirect('/employees/sign-in');
+  });
 };
 
 module.exports.generateSession = (req, res) => {
