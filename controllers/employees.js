@@ -63,10 +63,6 @@ module.exports.newEmployee = async (req, res) => {
 };
 
 module.exports.destroySession = (req, res, next) => {
-  if (!req.isAuthenticated()) {
-    req.flash('error', 'no user log on detected!');
-    return res.redirect('/');
-  }
   req.logout((err) => {
     if (err) {
       return next(err);
