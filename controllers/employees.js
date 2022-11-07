@@ -72,7 +72,7 @@ module.exports.destroySession = (req, res, next) => {
       return next(err);
     }
     req.flash('success', 'Log out successful!');
-    return res.redirect('/employees/sign-in');
+    return res.redirect('/');
   });
 };
 

@@ -3,4 +3,26 @@
   type="text/css"
   href="<%= assetPath('/css/home.css') %>"
 />
-<div id="home-container">Home</div>
+<div id="home-container">
+  <% if(!locals.employee){ %>
+  <h1>Welcome back! Please Log in to continue...</h1>
+  <ul>
+    <li>
+      <a href="/employees/sign-in">Log In</a>
+    </li>
+    <li>
+      <a href="/employees/sign-up">Register</a>
+    </li>
+  </ul>
+  <% }else{ %>
+  <h1>PLACEMENT CELL | MANAGE</h1>
+  <ul>
+    <li>
+      <a href="/students/list">Student List</a>
+    </li>
+    <li>
+      <a href="/interviews/list">Interview List</a>
+    </li>
+  </ul>
+  <% } %>
+</div>

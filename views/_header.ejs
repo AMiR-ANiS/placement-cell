@@ -5,12 +5,16 @@
 />
 <header>
   <div id="header-left">
-    <a href="/">Placement Cell</a>
+    <a href="/">PLACEMENT CELL</a>
   </div>
   <div id="header-right">
     <ul>
-      <li><a href="/employees/sign-in">Sign In</a></li>
-      <li><a href="/employees/sign-up">Sign Up</a></li>
+      <% if(!locals.employee){ %>
+      <li><a href="/employees/sign-in">Log In</a></li>
+      <li><a href="/employees/sign-up">Register</a></li>
+      <% }else{ %>
+      <li><a href="/employees/sign-out">Log out</a></li>
+      <% } %>
     </ul>
   </div>
 </header>
