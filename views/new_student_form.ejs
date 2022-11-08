@@ -1,0 +1,46 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="<%= assetPath('/css/new_student.css') %>"
+/>
+
+<div id="new-student-form">
+  <h1>NEW STUDENT ENTRY</h1>
+  <form action="/students/create" method="POST">
+    Name: <br />
+    <input type="text" name="name" placeholder="Enter name" />
+    <br />
+    <br />
+    College: <br />
+    <input type="text" name="college" placeholder="Enter college name" />
+    <br />
+    <br />
+    Batch:
+    <input
+      type="month"
+      name="batch"
+      value="<%= `${new Date().getFullYear()}-${new Date().getMonth()+1}` %>"
+    />
+    <br />
+    <br />
+    Placement status: <br />
+    <input type="radio" name="status" value="placed" />
+    Placed <br />
+    <input type="radio" name="status" value="not_placed" />
+    Not placed <br />
+    <br />
+    DSA final score: (0-100) <br />
+    <input type="number" name="dsa_score" min="0" max="100" />
+    <br />
+    <br />
+    Web Development final score: (0-100) <br />
+    <input type="number" name="webd_score" min="0" max="100" />
+    <br />
+    <br />
+    React final score: (0-100) <br />
+    <input type="number" name="react_score" min="0" max="100" />
+    <br />
+    <br />
+    <input type="submit" value="Add Student" />
+  </form>
+</div>

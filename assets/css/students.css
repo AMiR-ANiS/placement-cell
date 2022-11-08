@@ -1,0 +1,37 @@
+#students-container {
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #c7fff1;
+  padding: 10px;
+}
+
+#students-container #new-student-button {
+  text-align: center;
+}
+
+#students-container #new-student-button a {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px black;
+  background-color: #92ff84;
+  text-decoration: none;
+}
+
+#students-container #new-student-button a:link {
+  color: black;
+}
+
+#students-container #new-student-button a:visited {
+  color: black;
+}
+
+#students-container #new-student-button a:hover {
+  color: white;
+  background-color: #39ff39;
+}
+
+#students-container #new-student-button a:active {
+  color: black;
+}
