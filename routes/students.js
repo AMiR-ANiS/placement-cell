@@ -9,5 +9,6 @@ router.get(
   passport.checkAuthentication,
   studentsController.newStudent
 );
+router.post('/create', passport.checkAuthentication, studentsController.create);
 
 module.exports = router;
