@@ -1,0 +1,15 @@
+<% let batchDate = new Date(student.batch); %> <% let months = ['January',
+'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+'October', 'November', 'December']; %> <% let month =
+months[batchDate.getMonth()]; %> <% let year = batchDate.getFullYear(); %>
+
+<tr>
+  <td><%= i+1 %></td>
+  <td><%= student.name %></td>
+  <td><%= student.college %></td>
+  <td><%= `${month} ${year}` %></td>
+  <td><%= student.status %></td>
+  <td><%= `${student.dsa}/100` %></td>
+  <td><%= `${student.webd}/100` %></td>
+  <td><%= `${student.react}/100` %></td>
+</tr>

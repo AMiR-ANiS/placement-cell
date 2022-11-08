@@ -1,9 +1,16 @@
 const Student = require('../models/student');
 
-module.exports.list = (req, res) => {
-  return res.render('students', {
-    title: 'Placement Cell | Students'
-  });
+module.exports.list = async (req, res) => {
+  try {
+    let students = await Student.find({}).sort({ name: 1 });
+    return res.render('students', {
+      title: 'Placement Cell | Students',
+      students
+    });
+  } catch (err) {
+    req.flash('error', 'Error fetching from DB');
+    return res.redirect('back');
+  }
 };
 
 module.exports.newStudent = (req, res) => {

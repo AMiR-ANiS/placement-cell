@@ -35,4 +35,36 @@
 
 #new-student-form form input[type='submit']:hover {
   background-color: #2fff2f;
+  box-shadow: 3px 3px 3px black;
+}
+
+#new-student-form form a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 20px;
+  background-color: #ff8282;
+  padding: 10px;
+}
+
+#new-student-form form a:link {
+  color: black;
+}
+
+#new-student-form form a:visited {
+  color: black;
+}
+
+#new-student-form form a:hover {
+  color: white;
+  background-color: #ff3232;
+  box-shadow: 3px 3px 3px black;
+}
+
+#new-student-form form a:active {
+  color: black;
 }

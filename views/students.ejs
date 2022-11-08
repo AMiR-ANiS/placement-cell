@@ -8,5 +8,27 @@
   <div id="new-student-button">
     <a href="/students/new-student-form">ADD NEW STUDENT</a>
   </div>
-  <h1>List of Students:</h1>
+  <div id="students-table">
+    <table>
+      <caption>
+        List of students
+      </caption>
+      <thead>
+        <tr>
+          <th>Sl. no.</th>
+          <th style="width: 200px; max-width: 200px">Name</th>
+          <th style="width: 200px; max-width: 200px">College</th>
+          <th>Batch</th>
+          <th>Status</th>
+          <th>DSA score</th>
+          <th>Web Dev score</th>
+          <th>React score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i = 0; i < students.length; i++) { %> <%- include('_student',
+        {student: students[i], i: i}) -%> <% } %>
+      </tbody>
+    </table>
+  </div>
 </div>
