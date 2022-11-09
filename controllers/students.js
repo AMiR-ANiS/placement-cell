@@ -2,7 +2,7 @@ const Student = require('../models/student');
 
 module.exports.list = async (req, res) => {
   try {
-    let students = await Student.find({}).sort({ name: 1 });
+    let students = await Student.find({});
     return res.render('students', {
       title: 'Placement Cell | Students',
       students

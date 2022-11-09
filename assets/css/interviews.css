@@ -1,0 +1,39 @@
+#interviews-container {
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: auto;
+  background-color: #fff3e4;
+}
+
+#interviews-container #create-interview-button {
+  text-align: center;
+}
+
+#interviews-container #create-interview-button a {
+  padding: 10px;
+  border: 1px solid black;
+  display: inline-block;
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: #82ff82;
+  box-shadow: 2px 2px 2px black;
+}
+
+#interviews-container #create-interview-button a:link {
+  color: black;
+}
+
+#interviews-container #create-interview-button a:visited {
+  color: black;
+}
+
+#interviews-container #create-interview-button a:hover {
+  color: white;
+  background-color: #39ff39;
+  box-shadow: 3px 3px 3px black;
+}
+
+#interviews-container #create-interview-button a:active {
+  color: black;
+}
