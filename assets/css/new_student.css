@@ -27,7 +27,7 @@
   width: 300px;
   padding: 10px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #81ff81;
   box-shadow: 2px 2px 2px black;
   cursor: pointer;
@@ -36,6 +36,7 @@
 #new-student-form form input[type='submit']:hover {
   background-color: #2fff2f;
   box-shadow: 3px 3px 3px black;
+  color: white;
 }
 
 #new-student-form form a {

@@ -1,0 +1,27 @@
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="<%= assetPath('/css/new_interview.css') %>"
+/>
+
+<div id="new-interview-form">
+  <h1>CREATE NEW INTERVIEW</h1>
+  <form action="/interviews/create" method="post">
+    Company Name: <br />
+    <input type="text" name="company_name" placeholder="Enter company name" />
+    <br />
+    <br />
+    Interview Date: <br />
+    <input
+      type="date"
+      name="interview_date"
+      value="<%= `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}` %>"
+    />
+    <br />
+    <br />
+    <input type="submit" value="Create Interview" />
+    <br />
+    <br />
+    <a href="/interviews/list">Back</a>
+  </form>
+</div>

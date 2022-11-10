@@ -1,26 +1,26 @@
-#new-student-form {
+#new-interview-form {
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100%;
   box-sizing: border-box;
   overflow: auto;
-  background-color: rgb(255, 227, 227);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 228, 247);
 
   form {
     input[type='text'] {
       width: 300px;
-      padding: 7px;
-      border-radius: 20px;
+      padding: 5px;
       box-sizing: border-box;
+      border-radius: 20px;
     }
 
-    input[type='number'] {
+    input[type='date'] {
       width: 300px;
-      padding: 7px;
+      padding: 5px;
       box-sizing: border-box;
-      border-radius: 10px;
+      border-radius: 20px;
     }
 
     input[type='submit'] {
@@ -28,12 +28,12 @@
       padding: 10px;
       border: 1px solid black;
       border-radius: 20px;
-      background-color: rgb(129, 255, 129);
+      background-color: rgb(125, 255, 125);
       box-shadow: 2px 2px 2px black;
       cursor: pointer;
 
       &:hover {
-        background-color: rgb(47, 255, 47);
+        background-color: rgb(49, 255, 49);
         box-shadow: 3px 3px 3px black;
         color: white;
       }
@@ -41,15 +41,15 @@
 
     a {
       display: inline-block;
+      width: 300px;
       text-align: center;
       text-decoration: none;
-      width: 300px;
-      box-sizing: border-box;
       border: 1px solid black;
-      box-shadow: 2px 2px 2px black;
       border-radius: 20px;
-      background-color: rgb(255, 130, 130);
       padding: 10px;
+      box-sizing: border-box;
+      box-shadow: 2px 2px 2px black;
+      background-color: rgb(255, 129, 129);
 
       &:link {
         color: black;
@@ -61,8 +61,8 @@
 
       &:hover {
         color: white;
-        background-color: rgb(255, 50, 50);
         box-shadow: 3px 3px 3px black;
+        background-color: rgb(255, 59, 59);
       }
 
       &:active {
