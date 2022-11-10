@@ -1,3 +1,5 @@
+const Interview = require('../models/interview');
+
 module.exports.list = (req, res) => {
   return res.render('interviews', {
     title: 'Placement Cell | Interviews'
@@ -20,6 +22,23 @@ module.exports.create = async (req, res) => {
     if (req.body.interview_date.length === 0) {
       req.flash('error', 'Please specify an interview date!');
       return res.redirect('back');
+    }
+
+    let interview = await Interview.findOne({
+      name: req.body.company_name.toUpperCase()
+    });
+
+    if (interview) {
+      req.flash('error', 'Company interview already exists!');
+      return res.redirect('back');
+    } else {
+      await Interview.create({
+        name: req.body.company_name.toUpperCase(),
+        date: req.body.interview_date
+      });
+
+      req.flash('success', 'Company interview scheduled successfully!');
+      return res.redirect('/interviews/list');
     }
   } catch (err) {
     req.flash('error', 'Error creating an interview!');
