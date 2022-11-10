@@ -9,5 +9,10 @@ router.get(
   passport.checkAuthentication,
   interviewsController.newInterview
 );
+router.post(
+  '/create',
+  passport.checkAuthentication,
+  interviewsController.create
+);
 
 module.exports = router;
