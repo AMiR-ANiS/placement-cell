@@ -1,0 +1,11 @@
+<% let interviewDate = new Date(interview.date); %> <% let months = ['January',
+'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+'October', 'November', 'December']; %> <% let year =
+interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
+%> <% let date = interviewDate.getDate(); %>
+
+<tr>
+  <td><%= i+1 %></td>
+  <td><%= interview.name %></td>
+  <td><%= `${month} ${date}, ${year}` %></td>
+</tr>

@@ -8,4 +8,22 @@
   <div id="create-interview-button">
     <a href="/interviews/new-interview-form">Create An Interview</a>
   </div>
+  <div id="interviews-table">
+    <table>
+      <caption>
+        List of interviews
+      </caption>
+      <thead>
+        <tr>
+          <th>Sl. No.</th>
+          <th style="width: 200px; max-width: 200px">Company Name</th>
+          <th style="width: 200px; max-width: 200px">Interview Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0; i < interviews.length; i++){ %> <%-
+        include('_interview', {interview: interviews[i], i: i}); -%> <% } %>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -17,18 +17,19 @@
     input {
       width: 300px;
       border-radius: 50px;
-      padding: 5px;
+      padding: 10px;
       border: 1px solid black;
       box-sizing: border-box;
     }
 
     input[type='submit'] {
-      background-color: rgb(23, 199, 0);
+      background-color: rgb(144, 255, 129);
       cursor: pointer;
       box-shadow: 2px 2px 2px black;
 
       &:hover {
-        background-color: rgb(28, 238, 0);
+        background-color: rgb(70, 255, 45);
+        box-shadow: 4px 4px 4px black;
       }
     }
   }

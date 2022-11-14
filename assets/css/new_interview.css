@@ -11,14 +11,14 @@
 
 #new-interview-form form input[type='text'] {
   width: 300px;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
 }
 
 #new-interview-form form input[type='date'] {
   width: 300px;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
 }

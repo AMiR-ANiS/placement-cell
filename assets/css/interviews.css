@@ -37,3 +37,28 @@
 #interviews-container #create-interview-button a:active {
   color: black;
 }
+
+#interviews-container #interviews-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#interviews-container #interviews-table table {
+  border-collapse: collapse;
+}
+
+#interviews-container #interviews-table td,
+#interviews-container #interviews-table th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#interviews-container #interviews-table tr:nth-child(even) {
+  background-color: #ffbcbc;
+}
+
+#interviews-container #interviews-table tr:hover {
+  background-color: #d7e7ff;
+}
