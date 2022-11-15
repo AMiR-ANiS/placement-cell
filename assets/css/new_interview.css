@@ -14,6 +14,8 @@
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
+  border: 1px dashed #0000db;
+  background-color: #e4fff5;
 }
 
 #new-interview-form form input[type='date'] {
@@ -21,6 +23,8 @@
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
+  border: 1px dashed #0000db;
+  background-color: #e4fff5;
 }
 
 #new-interview-form form input[type='submit'] {

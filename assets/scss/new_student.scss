@@ -14,6 +14,8 @@
       padding: 10px;
       border-radius: 20px;
       box-sizing: border-box;
+      border: 1px dashed rgb(0, 0, 219);
+      background-color: rgb(228, 255, 245);
     }
 
     input[type='number'] {
@@ -21,11 +23,15 @@
       padding: 10px;
       box-sizing: border-box;
       border-radius: 10px;
+      border: 1px dashed rgb(0, 0, 219);
+      background-color: rgb(228, 255, 245);
     }
 
     input[type='month'] {
       padding: 10px;
       border-radius: 10px;
+      border: 1px dashed rgb(0, 0, 219);
+      background-color: rgb(228, 255, 245);
     }
 
     input[type='submit'] {

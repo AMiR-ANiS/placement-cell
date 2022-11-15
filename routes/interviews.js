@@ -24,5 +24,15 @@ router.post(
   passport.checkAuthentication,
   interviewsController.allocate
 );
+router.get(
+  '/students/:id',
+  passport.checkAuthentication,
+  interviewsController.studentsList
+);
+router.post(
+  '/update',
+  passport.checkAuthentication,
+  interviewsController.update
+);
 
 module.exports = router;

@@ -68,9 +68,7 @@ module.exports.allocateList = async (req, res) => {
       return res.redirect('back');
     }
     await interview.populate('results');
-    let checkedStudentIDs = interview.results.map(
-      (result) => result.student._id
-    );
+    let checkedStudentIDs = interview.results.map((result) => result.student);
     let checkedStudents = await Student.find({
       _id: { $in: checkedStudentIDs }
     });
@@ -126,6 +124,54 @@ module.exports.allocate = async (req, res) => {
     }
 
     req.flash('success', 'Students allocated successfully!');
+    return res.redirect('/interviews/list');
+  } catch (err) {
+    req.flash('error', err);
+    return res.redirect('back');
+  }
+};
+
+module.exports.studentsList = async (req, res) => {
+  try {
+    let interview = await Interview.findById(req.params.id);
+
+    if (!interview) {
+      req.flash('error', 'Interview does not exist!');
+      return res.redirect('back');
+    }
+
+    await interview.populate({
+      path: 'results',
+      populate: {
+        path: 'student'
+      }
+    });
+
+    return res.render('interview_students', {
+      title: 'Placement Cell | List of allocated students',
+      interview
+    });
+  } catch (err) {
+    req.flash('error', err);
+    console.log(err);
+    return res.redirect('back');
+  }
+};
+
+module.exports.update = async (req, res) => {
+  try {
+    for (let key in req.body) {
+      let result = await Result.findById(key);
+
+      if (!result) {
+        req.flash('error', 'Result ID does not exist!');
+        return res.redirect('back');
+      }
+
+      result.result = req.body[key];
+      await result.save();
+    }
+    req.flash('success', 'Result status updated successfully!');
     return res.redirect('/interviews/list');
   } catch (err) {
     req.flash('error', err);

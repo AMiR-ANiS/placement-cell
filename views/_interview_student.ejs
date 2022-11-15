@@ -1,0 +1,26 @@
+<% let batchDate = new Date(student.batch); %> <% let months = ['January',
+'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+'October', 'November', 'December']; %> <% let month =
+months[batchDate.getMonth()]; %> <% let year = batchDate.getFullYear(); %> <%
+let options = ['pass', 'fail', 'on_hold', 'did_not_attempt']; %> <% let
+otherOptions = options.filter((option) => option !== result.result); %>
+
+<tr>
+  <td><%= student._id %></td>
+  <td><%= student.name %></td>
+  <td><%= student.college %></td>
+  <td><%= `${month} ${year}` %></td>
+  <td><%= student.status %></td>
+  <td><%= `${student.dsa}/100` %></td>
+  <td><%= `${student.webd}/100` %></td>
+  <td><%= `${student.react}/100` %></td>
+  <td>
+    <select name="<%= result._id %>">
+      <option value="<%= result.result %>" selected>
+        <%= result.result %>
+      </option>
+      <% for(let i=0; i < otherOptions.length; i++){ %> <%- include('_options',
+      {option: otherOptions[i]}) -%> <% } %>
+    </select>
+  </td>
+</tr>

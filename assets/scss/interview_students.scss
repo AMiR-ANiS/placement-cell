@@ -1,0 +1,86 @@
+#interview-students-container {
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(199, 255, 241);
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #interview-students-table {
+    padding: 20px;
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    tr {
+      &:nth-child(even) {
+        background-color: rgb(255, 188, 188);
+      }
+
+      &:hover {
+        background-color: rgb(215, 231, 255);
+      }
+    }
+
+    input[type='submit'] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid black;
+      box-shadow: 2px 2px 2px black;
+      margin-top: 20px;
+      background-color: rgb(132, 255, 132);
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(61, 255, 61);
+      }
+    }
+
+    button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid black;
+      box-shadow: 2px 2px 2px black;
+      margin-top: 20px;
+      background-color: rgb(255, 131, 131);
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(255, 58, 58);
+      }
+    }
+
+    select {
+      padding: 2px;
+      border: 1px double rgb(128, 255, 128);
+      border-radius: 20px;
+
+      option[value='fail'] {
+        background-color: rgb(255, 130, 130);
+      }
+
+      option[value='on_hold'] {
+        background-color: rgb(255, 255, 128);
+      }
+
+      option[value='pass'] {
+        background-color: rgb(130, 255, 130);
+      }
+
+      option[value='did_not_attempt'] {
+        background-color: rgb(255, 123, 255);
+      }
+    }
+  }
+}
