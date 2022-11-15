@@ -4,6 +4,13 @@
 months[batchDate.getMonth()]; %> <% let year = batchDate.getFullYear(); %>
 
 <tr>
+  <td style="text-align: center">
+    <% if(checked){ %>
+    <input type="checkbox" name="<%=i%>" value="<%=student._id%>" checked />
+    <% }else{ %>
+    <input type="checkbox" name="<%=i%>" value="<%=student._id%>" />
+    <% } %>
+  </td>
   <td><%= student._id %></td>
   <td><%= student.name %></td>
   <td><%= student.college %></td>

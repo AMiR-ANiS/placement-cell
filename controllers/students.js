@@ -8,7 +8,7 @@ module.exports.list = async (req, res) => {
       students
     });
   } catch (err) {
-    req.flash('error', 'Error rendering students list!');
+    req.flash('error', err);
     return res.redirect('back');
   }
 };
@@ -86,7 +86,7 @@ module.exports.create = async (req, res) => {
     req.flash('success', 'Student record created successfully!');
     return res.redirect('/students/list');
   } catch (err) {
-    req.flash('error', 'Error creating new student record!');
+    req.flash('error', err);
     return res.redirect('back');
   }
 };

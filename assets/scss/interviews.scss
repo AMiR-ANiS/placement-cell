@@ -62,5 +62,32 @@
         background-color: rgb(215, 231, 255);
       }
     }
+
+    td {
+      a {
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid black;
+        padding: 3px;
+        border-radius: 20px;
+        background-color: rgb(181, 255, 181);
+
+        &:link {
+          color: black;
+        }
+
+        &:visited {
+          color: black;
+        }
+
+        &:hover {
+          color: rgb(255, 62, 62);
+        }
+
+        &:active {
+          color: black;
+        }
+      }
+    }
   }
 }

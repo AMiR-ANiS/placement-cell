@@ -14,5 +14,15 @@ router.post(
   passport.checkAuthentication,
   interviewsController.create
 );
+router.get(
+  '/allocate/:id',
+  passport.checkAuthentication,
+  interviewsController.allocateList
+);
+router.post(
+  '/allocate',
+  passport.checkAuthentication,
+  interviewsController.allocate
+);
 
 module.exports = router;

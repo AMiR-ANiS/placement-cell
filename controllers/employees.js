@@ -57,7 +57,7 @@ module.exports.newEmployee = async (req, res) => {
       return res.redirect('/employees/sign-in');
     }
   } catch (err) {
-    req.flash('error', 'Sign up failed!');
+    req.flash('error', err);
     return res.redirect('back');
   }
 };

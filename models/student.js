@@ -36,7 +36,13 @@ const studentSchema = new mongoose.Schema(
       required: true,
       min: 0,
       max: 100
-    }
+    },
+    results: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Result'
+      }
+    ]
   },
   {
     timestamps: true

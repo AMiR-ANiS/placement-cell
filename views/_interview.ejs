@@ -8,4 +8,10 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
   <td><%= i+1 %></td>
   <td><%= interview.name %></td>
   <td><%= `${month} ${date}, ${year}` %></td>
+  <td style="text-align: center">
+    <a href="/interviews/allocate/<%=interview._id%>">allocate</a>
+  </td>
+  <td style="text-align: center">
+    <a href="/interviews/students/<%=interview._id%>">view</a>
+  </td>
 </tr>

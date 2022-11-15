@@ -15,7 +15,8 @@ const resultSchema = new mongoose.Schema(
     result: {
       type: String,
       required: true,
-      enum: ['pass', 'fail', 'did_not_attempt', 'on_hold']
+      enum: ['pass', 'fail', 'did_not_attempt', 'on_hold'],
+      default: 'on_hold'
     }
   },
   {

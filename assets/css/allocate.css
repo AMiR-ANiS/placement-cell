@@ -1,0 +1,62 @@
+#allocate-container {
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #c7fff1;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#allocate-container #allocate-table {
+  padding: 20px;
+}
+
+#allocate-container #allocate-table table {
+  border-collapse: collapse;
+}
+
+#allocate-container #allocate-table td,
+#allocate-container #allocate-table th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#allocate-container #allocate-table tr:nth-child(even) {
+  background-color: #ffbcbc;
+}
+
+#allocate-container #allocate-table tr:hover {
+  background-color: #d7e7ff;
+}
+
+#allocate-container #allocate-table input[type='submit'] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
+  margin-top: 20px;
+  background-color: #84ff84;
+  cursor: pointer;
+}
+
+#allocate-container #allocate-table input[type='submit']:hover {
+  background-color: #3dff3d;
+}
+
+#allocate-container #allocate-table button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
+  margin-top: 20px;
+  background-color: #ff8383;
+  cursor: pointer;
+}
+
+#allocate-container #allocate-table button:hover {
+  background-color: #ff3a3a;
+}

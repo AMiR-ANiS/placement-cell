@@ -62,3 +62,28 @@
 #interviews-container #interviews-table tr:hover {
   background-color: #d7e7ff;
 }
+
+#interviews-container #interviews-table td a {
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 20px;
+  background-color: #b5ffb5;
+}
+
+#interviews-container #interviews-table td a:link {
+  color: black;
+}
+
+#interviews-container #interviews-table td a:visited {
+  color: black;
+}
+
+#interviews-container #interviews-table td a:hover {
+  color: #ff3e3e;
+}
+
+#interviews-container #interviews-table td a:active {
+  color: black;
+}

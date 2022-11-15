@@ -9,7 +9,13 @@ const interviewSchema = new mongoose.Schema(
     date: {
       type: Date,
       required: true
-    }
+    },
+    results: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Result'
+      }
+    ]
   },
   {
     timestamps: true
