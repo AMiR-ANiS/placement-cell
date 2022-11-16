@@ -1,0 +1,26 @@
+#csv-download-container {
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #d7f6ff;
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#csv-download-container button {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+  margin-top: 20px;
+  background-color: #7effa9;
+  cursor: pointer;
+}
+
+#csv-download-container button:hover {
+  background-color: #50ff39;
+}

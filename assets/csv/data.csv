@@ -1,0 +1,15 @@
+ID,NAME,COLLEGE,BATCH,STATUS,DSA FINAL SCORE,WEB DEV FINAL SCORE,REACT FINAL SCORE,INTERVIEW DATE,INTERVIEW COMPANY,INTERVIEW RESULT
+63738c6480c92ece1949e4d3,A,A,Jan 2022,placed,1,1,1,Sat Nov 19 2022,AA,pass
+63738c6480c92ece1949e4d3,A,A,Jan 2022,placed,1,1,1,Sun Nov 20 2022,BB,did_not_attempt
+63738c6480c92ece1949e4d3,A,A,Jan 2022,placed,1,1,1,Wed Nov 30 2022,CC,pass
+63738c6480c92ece1949e4d3,A,A,Jan 2022,placed,1,1,1,Wed Nov 30 2022,DD,pass
+63738c6f80c92ece1949e4d9,B,B,Mar 2022,not_placed,3,7,10,Sat Nov 19 2022,AA,pass
+63738c6f80c92ece1949e4d9,B,B,Mar 2022,not_placed,3,7,10,Sun Nov 20 2022,BB,pass
+63738c6f80c92ece1949e4d9,B,B,Mar 2022,not_placed,3,7,10,Wed Nov 30 2022,CC,fail
+63738c7a80c92ece1949e4df,C,C,May 2022,placed,12,3,1,Sat Nov 19 2022,AA,did_not_attempt
+63738c7a80c92ece1949e4df,C,C,May 2022,placed,12,3,1,Sun Nov 20 2022,BB,did_not_attempt
+63738c7a80c92ece1949e4df,C,C,May 2022,placed,12,3,1,Wed Nov 30 2022,CC,on_hold
+63738c8980c92ece1949e4e5,D,D,Sep 2022,not_placed,1,17,1,Sat Nov 19 2022,AA,pass
+63738c8980c92ece1949e4e5,D,D,Sep 2022,not_placed,1,17,1,Sun Nov 20 2022,BB,on_hold
+63738c8980c92ece1949e4e5,D,D,Sep 2022,not_placed,1,17,1,Wed Nov 30 2022,CC,pass
+63738c8980c92ece1949e4e5,D,D,Sep 2022,not_placed,1,17,1,Wed Nov 30 2022,DD,fail
