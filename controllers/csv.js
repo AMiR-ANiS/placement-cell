@@ -1,7 +1,7 @@
 const objectsToCSV = require('objects-to-csv');
 const Student = require('../models/student');
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 
 module.exports.generate = async (req, res) => {
   try {
@@ -58,9 +58,16 @@ module.exports.generate = async (req, res) => {
       }
     });
 
-    const csvPath = path.join(__dirname, '..', 'assets', 'csv', 'data.csv');
+    const csvPath = path.join(
+      __dirname,
+      '..',
+      process.env.PLCMNT_ASSET_PATH,
+      'csv'
+    );
+
+    fs.existsSync(csvPath) || fs.mkdirSync(csvPath);
     const csv = new objectsToCSV(data);
-    await csv.toDisk(csvPath);
+    await csv.toDisk(path.join(csvPath, 'data.csv'));
     return res.render('csv', {
       title: 'Placement Cell | Download CSV'
     });
