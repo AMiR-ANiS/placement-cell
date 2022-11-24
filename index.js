@@ -4,10 +4,7 @@ const app = express();
 const viewHelpers = require('./config/view-helpers');
 // const env = require('./config/environment');
 const path = require('path');
-const port = process.env.PLCMNT_PORT;
-if (port === null || port === '') {
-  port = 8000;
-}
+const port = process.env.PORT || 3000;
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
 const sassMiddleWare = require('node-sass-middleware');
