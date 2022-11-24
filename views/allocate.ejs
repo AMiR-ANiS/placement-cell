@@ -12,8 +12,9 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
 
 <div id="allocate-container">
   <h1>Allocate Students</h1>
-  <div id="allocate-table">
-    <form action="/interviews/allocate" method="post">
+
+  <form action="/interviews/allocate" method="post">
+    <div id="allocate-table">
       <table>
         <caption>
           Allocate Students for the interview: <%= interview.name %> on <%=
@@ -23,8 +24,8 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
           <tr>
             <th>Select</th>
             <th>ID</th>
-            <th style="width: 200px; max-width: 200px">Name</th>
-            <th style="width: 200px; max-width: 200px">College</th>
+            <th>Name</th>
+            <th>College</th>
             <th>Batch</th>
             <th>Status</th>
             <th>DSA score</th>
@@ -40,10 +41,11 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
           {student: checkedStudents[j], i: i, checked: true}) -%> <% } %>
         </tbody>
       </table>
-      <input type="hidden" name="length" value="<%= length %>" />
-      <input type="hidden" name="interview" value="<%= interview._id %>" />
-      <input type="submit" value="Allocate" />
-      <a href="/interviews/list"><button type="button">Back</button></a>
-    </form>
-  </div>
+    </div>
+
+    <input type="hidden" name="length" value="<%= length %>" />
+    <input type="hidden" name="interview" value="<%= interview._id %>" />
+    <input type="submit" value="Allocate" />
+    <a href="/interviews/list"><button type="button">Back</button></a>
+  </form>
 </div>

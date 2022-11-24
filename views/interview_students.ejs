@@ -12,8 +12,9 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
 
 <div id="interview-students-container">
   <h1>List of Allocated Students</h1>
-  <div id="interview-students-table">
-    <form action="/interviews/update" method="post">
+
+  <form action="/interviews/update" method="post">
+    <div id="interview-students-table">
       <table>
         <caption>
           List of students allocated for the interview: <%= interview.name %> on
@@ -22,8 +23,8 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
         <thead>
           <tr>
             <th>ID</th>
-            <th style="width: 200px; max-width: 200px">Name</th>
-            <th style="width: 200px; max-width: 200px">College</th>
+            <th>Name</th>
+            <th>College</th>
             <th>Batch</th>
             <th>Status</th>
             <th>DSA score</th>
@@ -38,8 +39,9 @@ interviewDate.getFullYear(); %> <% let month = months[interviewDate.getMonth()]
           result: interview.results[i]}) -%> <% } %>
         </tbody>
       </table>
-      <input type="submit" value="Update Result Status" />
-      <a href="/interviews/list"><button type="button">Back</button></a>
-    </form>
-  </div>
+    </div>
+
+    <input type="submit" value="Update Result Status" />
+    <a href="/interviews/list"><button type="button">Back</button></a>
+  </form>
 </div>
