@@ -1,7 +1,10 @@
+// morgan logger config file
+
 const fs = require('fs');
 const path = require('path');
 const rfs = require('rotating-file-stream');
 
+// if log directory does not exist, then create it
 const logDir = path.join(__dirname, '..', 'production_logs');
 fs.existsSync(logDir) || fs.mkdirSync(logDir);
 

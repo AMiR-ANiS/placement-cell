@@ -1,3 +1,5 @@
+// result mapping between student and interview model
+
 const mongoose = require('mongoose');
 
 const resultSchema = new mongoose.Schema(

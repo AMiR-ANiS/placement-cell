@@ -1,3 +1,5 @@
+// routes for managing employees
+
 const express = require('express');
 const router = express.Router();
 const employeesController = require('../controllers/employees');

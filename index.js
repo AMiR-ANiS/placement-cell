@@ -1,9 +1,13 @@
+// inject the config vars from .env file to process.env
 require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const viewHelpers = require('./config/view-helpers');
 // const env = require('./config/environment');
 const path = require('path');
+
+// get the port number from env else set it to 3000
 const port = process.env.PORT || 3000;
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
@@ -21,6 +25,7 @@ const loggerConfig = require('./config/logger');
 
 viewHelpers(app);
 
+// use ejs as view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('layout extractStyles', true);
@@ -32,6 +37,8 @@ app.use(
   })
 );
 app.use(cookieParser());
+
+// if in development mode, use sass middleware
 if (process.env.PLCMNT_NAME === 'development') {
   app.use(
     sassMiddleWare({
@@ -43,8 +50,13 @@ if (process.env.PLCMNT_NAME === 'development') {
     })
   );
 }
+
+// set the static files path
 app.use(express.static(path.join(__dirname, process.env.PLCMNT_ASSET_PATH)));
 app.use(expressLayouts);
+
+// use the session cookie
+// cookie expiry in 1 hour
 app.use(
   session({
     name: process.env.PLCMNT_SESSION_COOKIE_NAME,

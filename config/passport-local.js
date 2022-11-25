@@ -1,3 +1,5 @@
+// define passport local authentication strategy
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const Employee = require('../models/employee');
@@ -26,10 +28,12 @@ passport.use(
   )
 );
 
+// serialize user to decide which property to store in the cookie
 passport.serializeUser((employee, done) => {
   return done(null, employee.id);
 });
 
+// deserialize the user from the cookie
 passport.deserializeUser(async (id, done) => {
   try {
     let employee = await Employee.findById(id);
@@ -40,6 +44,7 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
+// middleware for checking if user is signed in
 passport.checkAuthentication = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
@@ -48,6 +53,7 @@ passport.checkAuthentication = (req, res, next) => {
   }
 };
 
+// middlware for setting the user in response locals if authenticated
 passport.setAuthentication = (req, res, next) => {
   if (req.isAuthenticated()) {
     res.locals.employee = req.user;

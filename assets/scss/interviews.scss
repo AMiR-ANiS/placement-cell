@@ -1,3 +1,6 @@
+// scss for interviews page
+
+// styling the interviews container div
 #interviews-container {
   height: 100%;
   padding: 10px;
@@ -5,6 +8,7 @@
   overflow: auto;
   background-color: rgb(255, 243, 228);
 
+  // styling the create interview button
   #create-interview-button {
     text-align: center;
 
@@ -37,10 +41,12 @@
     }
   }
 
+  // styling the interviews table container div
   #interviews-table {
     padding: 10px;
     overflow: auto;
 
+    // styling the interviews table
     table {
       border-collapse: collapse;
       width: 100%;
@@ -52,6 +58,7 @@
       padding: 10px;
     }
 
+    // display every 2nd table row entry in different color
     tr {
       &:nth-child(even) {
         background-color: rgb(255, 188, 188);

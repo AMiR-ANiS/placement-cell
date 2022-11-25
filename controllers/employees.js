@@ -1,6 +1,9 @@
+// employees controller
+
 const Employee = require('../models/employee');
 
 module.exports.signUp = (req, res) => {
+  // if employee is logged in, redirect to home page
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
@@ -10,6 +13,7 @@ module.exports.signUp = (req, res) => {
 };
 
 module.exports.signIn = (req, res) => {
+  // if employee is logged in, redirect to home page
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
@@ -20,28 +24,35 @@ module.exports.signIn = (req, res) => {
 
 module.exports.newEmployee = async (req, res) => {
   try {
+    // if employee is logged in, redirect to home page
     if (req.isAuthenticated()) {
       return res.redirect('/');
     }
+
+    // check if name entered is not empty
     if (req.body.name.length === 0) {
       req.flash('error', 'Name cannot be empty!');
       return res.redirect('back');
     }
 
+    // check if email entered is not empty
     if (req.body.email.length === 0) {
       req.flash('error', 'Email cannot be empty!');
       return res.redirect('back');
     }
 
+    // check if password and confirm password matches
     if (req.body.password !== req.body.confirm_password) {
       req.flash('error', 'Password and confirm password should match!');
       return res.redirect('back');
     }
 
+    // find an employee with the entered email
     let employee = await Employee.findOne({
       email: req.body.email
     });
 
+    // if employee exists, cancel sign up and display error message else create employee account
     if (employee) {
       req.flash(
         'error',
@@ -62,6 +73,7 @@ module.exports.newEmployee = async (req, res) => {
   }
 };
 
+// logout function
 module.exports.destroySession = (req, res, next) => {
   req.logout((err) => {
     if (err) {
@@ -72,6 +84,7 @@ module.exports.destroySession = (req, res, next) => {
   });
 };
 
+// generate session function, display success message upon login
 module.exports.generateSession = (req, res) => {
   req.flash('success', 'Log in successful!');
   return res.redirect('/');

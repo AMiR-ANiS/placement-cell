@@ -30,7 +30,7 @@ gulp.task('scss', (done) => {
 
 gulp.task('cleanup_assets', (done) => {
   console.log('cleaning up...');
-  del.sync(['public', 'assets/css', 'assets/csv']);
+  del.sync(['public', 'assets/css', 'assets/csv', 'production_logs']);
   done();
 });
 

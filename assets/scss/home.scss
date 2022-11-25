@@ -1,3 +1,6 @@
+// scss for home page
+
+// styling the home container div
 #home-container {
   height: 100%;
   padding: 10px;
@@ -7,6 +10,7 @@
   align-items: center;
   background-color: rgb(199, 255, 241);
 
+  // styling the unordered list containing login/ signup/ log out links
   ul {
     list-style: none;
     padding: 0;

@@ -1,3 +1,6 @@
+// scss for csv download page
+
+// styling the download container div
 #csv-download-container {
   height: 100%;
   box-sizing: border-box;
@@ -8,6 +11,7 @@
   flex-direction: column;
   align-items: center;
 
+  // styling the download button
   button {
     width: 100%;
     box-sizing: border-box;

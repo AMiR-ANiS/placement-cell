@@ -1,3 +1,6 @@
+// view helpers config for static assets
+// set the appropriate path for assets based on whether app is in development mode or production mode
+
 // const env = require('./environment');
 const fs = require('fs');
 const path = require('path');
